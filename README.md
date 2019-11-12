@@ -15,7 +15,7 @@ In this workshop we are going to create an end-to-end application that processes
 
 ## Exercise 01: Setting Up the Environment and Creating a Cluster
 
-In this exercise, you will be setting up a new environment in Confluent Cloud, where you will create a new cluster and also set up a managed Schema Registry for it. This environment will be used throughout the entire workshop. The estimated time to complete this exercise is of **5 minutes**.
+In this exercise, you will be setting up a new environment in Confluent Cloud, where you will create a new cluster and also set up a managed Schema Registry for it. This environment will be used throughout the entire workshop. The estimated time to complete this exercise is of **15 minutes**.
 
 - **Step 01**: Log in into [Confluent Cloud](https://confluent.cloud/login) using your credentials.
   ![Log In](images/exer01/step01.png)
@@ -46,7 +46,7 @@ By completing this exercise, you should have:
 
 ## Exercise 02: Creating a Topic and Writing Data on It
 
-In this exercise, you will create a topic in the cluster and use the Confluent Cloud CLI to write data on it. This exercise will help you understand the concept of authentication using API Keys, as well as some of the basic functionality found in both the UI and the CLI. The estimated time to complete this exercise is of **15 minutes**.
+In this exercise, you will create a topic in the cluster and use the Confluent Cloud CLI to write data on it. This exercise will help you understand the concept of authentication using API Keys, as well as some of the basic functionality found in both the UI and the CLI. The estimated time to complete this exercise is of **30 minutes**.
 
 - **Step 01**: Log in into [Confluent Cloud](https://confluent.cloud/login) using your credentials.
   ![Log In](images/exer01/step01.png)
@@ -123,47 +123,55 @@ By completing this exercise, you should have:
 - One topic named "testing".
 - Some records stored in this topic.
 
-```java
-bootstrap.servers=localhost:9092
-listeners=http://localhost:8088
-auto.offset.reset=earliest
+## Exercise 03: Producing and Consuming Claims using Java
 
-############################## Jaeger Tracing Configuration ################################
+In this exercise, you will clone this repository to use the source-code written in Java to interact with your cluster. The code contains examples of native Java applications that relies on Kafka's client API to produce and consume records. The records created in this exercise will be used later on the workshop. The estimated time to complete this exercise is of **30 minutes**.
 
-producer.interceptor.classes=io.confluent.devx.util.KafkaTracingProducerInterceptor
-consumer.interceptor.classes=io.confluent.devx.util.KafkaTracingConsumerInterceptor
+- **Step 01**: Log in into [Confluent Cloud](https://confluent.cloud/login) using your credentials.
+  ![Log In](images/exer01/step01.png)
+- **Step 02**: Select the environment "confluent-workshop" to access the environment.
+- **Step 03**: Click in the cluster "confluent-workshop" to access the cluster.
+  ![Continue](images/exer02/step03.png)
+- **Step 04**: Click on the tab *CLI and Client Configuration* to access the client management.
+- **Step 05**: Click on the tab *Java Client* to access the Java client management.
+  ![Continue](images/exer03/step05.png)
+- **Step 06**: Click in the *Create Kafka Cluster API Key & Secret* button to create an API Key for the cluster.
+- **Step 07**: In the *Create an API Key* dialog, select the checkbox and then click in the *Continue* button.
+- **Step 08**: Click in the *Create Schema Registry API Key & Secret* button to create an API Key for Schema Registry.
+- **Step 09**: In the *Create a New Schema Registry API Key* dialog, select the checkbox and then click in the *Continue* button.
+- **Step 10**: Click in the *Copy to Clipboard* button to copy the properties created to the clipboard.
+- **Step 11**: Open the Visual Studio Code IDE in the desktop.
+- **Step 12**: Within the ccloud-workshop project, expand the folder *resources*.
+- **Step 13**: Click on the file *ccloud.properties* to open in the editor.
+- **Step 14**: Remove all the content that the file *ccloud.properties* might have.
+- **Step 15**: Press 'Ctrl + V' to paste the properties that you copied on step 10.
+- **Step 16**: Comment out the line 15 (the one that says 'key.serializer=') by inserting a '#' in the beginning.
+- **Step 17**: Save the changes made in the file *ccloud.properies*.
+- **Step 18**: Right click the option *ccloud-workshop* under the Maven projects view and select 'clean'.
+  ![Continue](images/exer03/step18.png)
+- **Step 19**: Right click the option *ccloud-workshop* under the Maven projects view and select 'package'.
+- **Step 20**: Within the ccloud-workshop project, expand the folder *source-code*.
+- **Step 21**: Within the *source-code* folder, expand: java/src/main/java/io/confluent/cloud/workshop.
+- **Step 22**: Click on the file *NativeProducer.java* to open in the editor.
+- **Step 23**: Scrow down the source-code until you find the main method.
+- **Step 24**: Click on the option *Run* to execute this Java class.
+  ![Continue](images/exer03/step24.png)
+- **Step 25**: In should see under the terminal, the output of the Java class saying that claims are being created.
+  ![Continue](images/exer03/step25.png)
+- **Step 26**: If you inspect the topics on the cluster, you should see a new topic called 'claims' and some messages being written on it.
+  ![Continue](images/exer03/step26.png)
+- **Step 27**: Within the *source-code* folder, expand: java/src/main/java/io/confluent/cloud/workshop.
+- **Step 28**: Click on the file *NativeConsumer.java* to open in the editor.
+- **Step 29**: Scrow down the source-code until you find the main method.
+- **Step 30**: Click on the option *Run* to execute this Java class.
+  ![Continue](images/exer03/step30.png)
+- **Step 31**: In should see under the terminal, the output of the Java class saying that claims are being consumed.
+  ![Continue](images/exer03/step31.png)
 
-############################################################################################
-```
+By completing this exercise, you should have:
 
-```bash
-export INTERCEPTORS_CONFIG_FILE=/etc/jaeger/ext/interceptorsConfig.json
-```
-
-Here is an example of the JSON configuration file:
-
-```json
-{
-   "services":[
-      {
-         "service":"CustomerService",
-         "config":{
-            "sampler":{
-               "type":"const",
-               "param":1
-            },
-            "reporter":{
-               "logSpans":true,
-               "flushIntervalMs":1000,
-```xml
-<dependency>
-    <groupId>io.opentracing</groupId>
-    <artifactId>opentracing-api</artifactId>
-    <version>VERSION</version>
-</dependency>
-
-</dependency>
-```
+- One new topic named "claims".
+- Some records stored in this topic.
 
 ## License
 

@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NativeConsumer",
+            "request": "launch",
+            "mainClass": "io.confluent.cloud.workshop.NativeConsumer",
+            "projectName": "ccloud-workshop"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NativeProducer",
+            "request": "launch",
+            "mainClass": "io.confluent.cloud.workshop.NativeProducer",
+            "projectName": "ccloud-workshop"
+        }
+    ]
+}
