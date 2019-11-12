@@ -113,6 +113,10 @@ In this exercise, you will create a topic in the cluster and use the Confluent C
   ```bash
   ccloud kafka topic consume testing -b
   ```
+- **Step 27**: Log out from the CLI by typing:
+  ```bash
+  ccloud logout
+  ```
 
 By completing this exercise, you should have:
 
