@@ -125,7 +125,7 @@ By completing this exercise, you should have:
 
 ## Exercise 03: Producing and Consuming Claims using Java
 
-In this exercise, you will clone this repository to use the source-code written in Java to interact with your cluster. The code contains examples of native Java applications that relies on Kafka's client API to produce and consume records. The records created in this exercise will be used later on the workshop. The estimated time to complete this exercise is of **30 minutes**.
+In this exercise, you will clone this repository to use the source-code written in Java to interact with your cluster. The code contains examples of native Java applications that relies on Kafka's client API to produce and consume records. The records created in this exercise will be used later on the workshop. The estimated time to complete this exercise is of **45 minutes**.
 
 - **Step 01**: Log in into [Confluent Cloud](https://confluent.cloud/login) using your credentials.
   ![Log In](images/exer01/step01.png)
