@@ -6,7 +6,7 @@ This workshop has been created to get developers up-to-speed in how to implement
 ## Requirements
 
 - Software VirtualBox installed: https://www.virtualbox.org/wiki/Downloads
-- VM containing the environment: https://riferrei-sharing.s3-accelerate.amazonaws.com/confluent-workshop.zip
+- VM containing the environment. Click [here](https://riferrei-sharing.s3-accelerate.amazonaws.com/confluent-workshop.zip) to download the latest version of the VM.
 - Access to the internet (Download, Read)
 - Access to endpoints over the port 9092
 
