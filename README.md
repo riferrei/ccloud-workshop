@@ -1,7 +1,7 @@
 ![Confluent Cloud](images/confluent_cloud.png#center)
 
 # Confluent Cloud Workshop
-This workshop has been created to get developers up-to-speed in how to implement Apache Kafka based applications using Confluent Cloud. This workshop doesn't intend to teach the basis for Apache Kafka, so developers taking this workshop should have previous familiarity with Kafka.
+This workshop has been created to get developers up-to-speed in how to implement Apache Kafka based applications using [Confluent Cloud](https://www.confluent.io/confluent-cloud). This workshop doesn't intend to teach the basis of Apache Kafka, therefore developers participating of this workshop should have previous familiarity with Kafka.
 
 ## Requirements
 
