@@ -10,7 +10,7 @@ This workshop has been created to get developers up-to-speed in how to implement
 
 ## Overview
 
-In this workshop, we are going to create an end-to-end application that handles claims data. It will be shown different methods of how to handle that data, including the Confluent Cloud CLI, native producers and consumers written in Java, as well as an KSQL pipeline that will transform and aggregate the data. It will be also shown how to handle data using the Avro format, where will be able to leverage the native features in Confluent Cloud for schema enforcement. Finally, we will export the processed data to a bucket in S3, by using a managed connector available in Confluent Cloud.
+In this workshop we are going to create an end-to-end application that processes claim data. It will be shown different methods of how to handle that data, including the Confluent Cloud CLI, native producers and consumers written in Java, as well as an KSQL pipeline that will transform and aggregate the data. It will be also shown how to handle data using the Avro format, where it is going to be possible to leverage the native features in Confluent Cloud for schema enforcement. Finally, we will export the processed data to a bucket in AWS S3 -- by using a managed connector available in Confluent Cloud.
 
 ## Usage
 
