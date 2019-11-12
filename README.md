@@ -44,6 +44,81 @@ By completing this exercise, you should have:
 - One cluster named "confluent-workshop".
 - Schema Registry enabled for the environment.
 
+## Exercise 02: Creating a Topic and Writing Data on It
+
+In this exercise, you will create a topic in the cluster and use the Confluent Cloud CLI to write data on it. This exercise will help you understand the concept of authentication using API Keys, as well as some of the basic functionality found in both the UI and the CLI. The estimated time to complete this exercise is of **15 minutes**.
+
+- **Step 01**: Log in into [Confluent Cloud](https://confluent.cloud/login) using your credentials.
+  ![Log In](images/exer01/step01.png)
+- **Step 02**: Select the environment "confluent-workshop" to access the environment.
+- **Step 03**: Click in the cluster "confluent-workshop" to access the cluster.
+  ![Continue](images/exer02/step03.png)
+- **Step 04**: Click on the tab *Topics* to access the topic management.
+  ![Continue](images/exer02/step04.png)
+- **Step 05**: Click in the *Create Topic* button to create a new topic.
+- **Step 06**: In the field *Topic Name* type "testing".
+- **Step 07**: Click in the *Create with Defaults* button to confirm the topic creation.
+  ![Continue](images/exer02/step07.png)
+- **Step 08**: Click on the tab *Messages* to access the built-in consumer.
+  ![Continue](images/exer02/step08.png)
+- **Step 09**: Open a new terminal in your Linux desktop.
+- **Step 10**: Log in to Confluent Cloud by typing:
+  ```bash
+  ccloud login
+  ```
+- **Step 11**: List your environments by typing:
+  ```bash
+  ccloud environment list
+  ```
+- **Step 12**: Select the ID of the environment "confluent-workshop".
+- **Step 13**: Make sure the environment is selected by typing:
+  ```bash
+  ccloud environment use <ID_SELECTED_ON_STEP_12>
+  ```
+- **Step 14**: List your clusters by typing:
+  ```bash
+  ccloud kafka cluster list
+  ```
+- **Step 15**: Select the ID of the cluster "confluent-workshop".
+- **Step 16**: Make sure the cluster is selected by typing:
+  ```bash
+  ccloud kafka cluster use <ID_SELECTED_ON_STEP_15>
+  ```
+- **Step 17**: List your topics by typing:
+  ```bash
+  ccloud kafka topic list
+  ```
+- **Step 18**: Describe the topic "testing" by typing:
+  ```bash
+  ccloud kafka topic describe testing
+  ```
+- **Step 19**: Create a new API Key by typing:
+  ```bash
+  ccloud api-key create
+  ```
+- **Step 20**: Select the API Key shown in the console.
+- **Step 21**: Make sure the API Key is selected by typing:
+  ```bash
+  ccloud api-key use <API_KEY_SELECTED_ON_STEP_20>
+  ```
+- **Step 22**: Create a built-in producer by typing:
+  ```bash
+  ccloud kafka topic produce testing
+  ```
+- **Step 23**: Type random strings (ex: 'hello world', 'Hi there', 'testing') and press enter for each one of them.
+- **Step 24**: Press 'Ctrl + C' to stop the built-in producer.
+- **Step 25**: Go back to the Confluent Cloud UI to check if the records were written in the topic.
+  ![Continue](images/exer02/step25.png)
+- **Step 26**: To check if the records were written using the console, type:
+  ```bash
+  ccloud kafka topic consume testing -b
+  ```
+
+By completing this exercise, you should have:
+
+- One topic named "testing".
+- Some records stored in this topic.
+
 ```java
 bootstrap.servers=localhost:9092
 listeners=http://localhost:8088
