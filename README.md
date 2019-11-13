@@ -159,6 +159,7 @@ In this exercise, you will clone this repository to use the source-code written 
   * Don't bother if Visual Studio Code says that there are compiler errors. There aren't, so just click *Proceed*.
 - **Step 25**: In should see under the terminal, the output of the Java class saying that claims are being created.
   ![Continue](images/exer03/step25.png)
+  * Please leave this Java application running until the end of the workshop.
 - **Step 26**: If you inspect the topics on the cluster, you should see a new topic called 'claims' and some messages being written on it.
   ![Continue](images/exer03/step26.png)
 - **Step 27**: Within the *source-code* folder, expand: java/src/main/java/io/confluent/cloud/workshop.
@@ -199,7 +200,7 @@ In this exercise, you are going to build an event streaming pipeline that will t
   ```
 - **Step 11**: You should see something like the image below:
   ![Continue](images/exer04/step11.png)
-- **Step 12**: Leave that server running until the end of this workshop.
+  * Please leave this KSQL Server running until the end of the workshop.
 - **Step 13**: Within the *source-code* folder, expand: ksql.
 - **Step 14**: Click on the file *pipeline.sql* to open in the editor.
 - **Step 15**: Replace the variable <YOUR_NAME> with your name.
