@@ -205,19 +205,19 @@ In this exercise, you are going to build an event streaming pipeline that will t
 - **Step 15**: Replace the variable <YOUR_NAME> with your name.
 - **Step 16**: Save the changes made in the file *pipeline.sql*.
 - **Step 17**: Open a new terminal, and navigate to the folder that contains the file *pipeline.sql*.
-- **Step 15**: Start a new client session with the KSQL Server by typing:
+- **Step 18**: Start a new client session with the KSQL Server by typing:
   ```bash
   ksql
   ```
-- **Step 16**: Once you are logged into the KSQL Server, type:
+- **Step 19**: Once you are logged into the KSQL Server, type:
   ```bash
   RUN SCRIPT 'pipeline.sql';
   ```
-- **Step 17**: To make sure everything is correct, type:
+- **Step 20**: To make sure everything is correct, type:
   ```bash
   SELECT * FROM CLAIMS_PER_STATE;
   ```
-- **Step 18**: You should see an output like the one below:
+- **Step 21**: You should see an output like the one below:
   ![Continue](images/exer04/step18.png)
 
 By completing this exercise, you should have:
