@@ -175,6 +175,62 @@ By completing this exercise, you should have:
 - One new topic named "claims".
 - Some records stored in this topic.
 
+## Exercise 04: Building an Event Streaming Pipeline using KSQL
+
+In this exercise, you are going to build an event streaming pipeline that will transform the raw events containing the claims into a table that summarizes the sum of all claims per state, as well as change the output format from Avro to JSON. In order to do this, you are going to spin up your own KSQL Server that will connect to the cluster running on Confluent Cloud. The estimated time to complete this exercise is of **30 minutes**.
+
+- **Step 01**: Open the Visual Studio Code IDE in the desktop.
+- **Step 02**: Within the ccloud-workshop project, expand the folder *resources*.
+- **Step 03**: Click on the file *ccloud.properties* to open in the editor.
+- **Step 04**: Within the ccloud-workshop project, expand the folder *source-code*.
+- **Step 05**: Within the *source-code* folder, expand: ksql.
+- **Step 06**: Click on the file *ksql-server.properties* to open in the editor.
+- **Step 07**: In the *ksql-server.properties* file, replace all the variables with the values present in the file *ccloud.properties*. The variables you need to replace are:
+  * <BOOTSTRAP_SERVERS>
+  * <CLUSTER_API_KEY>
+  * <CLUSTER_API_SECRET>
+  * <SCHEMA_REGISTRY_URL>
+  * <SR_API_KEY>:<SR_API_SECRET>
+- **Step 08**: Save the changes made in the file *ksql-server.properies*.
+- **Step 09**: Open a new terminal, and navigate to the folder that contains the file *ksql-server.properties*.
+- **Step 10**: Run your own KSQL Server by typing:
+  ```bash
+  ksql-server-start ksql-server.properties
+  ```
+- **Step 11**: You should see something like the image below:
+  ![Continue](images/exer04/step11.png)
+- **Step 12**: Leave that server running until the end of this workshop.
+- **Step 13**: Within the *source-code* folder, expand: ksql.
+- **Step 14**: Click on the file *pipeline.sql* to open in the editor.
+- **Step 15**: Replace the variable <YOUR_NAME> with your name.
+- **Step 16**: Save the changes made in the file *pipeline.sql*.
+- **Step 17**: Open a new terminal, and navigate to the folder that contains the file *pipeline.sql*.
+- **Step 15**: Start a new client session with the KSQL Server by typing:
+  ```bash
+  ksql
+  ```
+- **Step 16**: Once you are logged into the KSQL Server, type:
+  ```bash
+  RUN SCRIPT 'pipeline.sql';
+  ```
+- **Step 17**: To make sure everything is correct, type:
+  ```bash
+  SELECT * FROM CLAIMS_PER_STATE;
+  ```
+- **Step 18**: You should see an output like the one below:
+  ![Continue](images/exer04/step18.png)
+
+By completing this exercise, you should have:
+
+- A KSQL Server instance running forever.
+- An event streaming pipeline created.
+- One new topic named "CLAIMS_REKEYED".
+- Some records stored in this topic.
+- One new topic named "<YOUR_NAME>_STREAM".
+- Some records stored in this topic.
+- One new topic named "CLAIMS_PER_STATE".
+- Some records stored in this topic.
+
 ## License
 
 [Apache 2.0 License](./LICENSE).
