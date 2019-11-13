@@ -220,6 +220,7 @@ In this exercise, you are going to build an event streaming pipeline that will t
   ```
 - **Step 21**: You should see an output like the one below:
   ![Continue](images/exer04/step18.png)
+- **Step 22**: Press 'Ctrl + C' to stop the query execution.
 
 By completing this exercise, you should have:
 
