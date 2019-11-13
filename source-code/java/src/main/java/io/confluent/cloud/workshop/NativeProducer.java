@@ -31,12 +31,10 @@ public class NativeProducer {
         generatedKey, createClaim(generatedKey));
 
       producer.send(record, new Callback() {
-
         @Override
         public void onCompletion(RecordMetadata metadata, Exception exception) {
           System.out.println("Claim '" + generatedKey + "' created successfully!");
         }
-        
       });
 
       try {
@@ -65,11 +63,9 @@ public class NativeProducer {
   private static KafkaProducer<String, Claim> producer;
 
   static {
-
     Runtime.getRuntime().addShutdownHook(new Thread(() -> {
       producer.close();
     }));
-
   }
 
   public static void main(String args[]) throws Exception {

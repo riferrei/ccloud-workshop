@@ -24,13 +24,10 @@ public class NativeConsumer {
     ConsumerRecords<String, Claim> records = null;
     
     while (true) {
-
       records = consumer.poll(Duration.ofMillis(500));
-
       for (ConsumerRecord<String, Claim> record : records) {
         System.out.println(record.value());
       }
-
     }
 
   }
@@ -38,11 +35,9 @@ public class NativeConsumer {
   private static KafkaConsumer<String, Claim> consumer;
 
   static {
-
     Runtime.getRuntime().addShutdownHook(new Thread(() -> {
       consumer.close();
     }));
-
   }
 
   public static void main(String args[]) throws Exception {

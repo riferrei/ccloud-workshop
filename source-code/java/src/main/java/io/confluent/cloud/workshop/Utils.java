@@ -14,19 +14,14 @@ public class Utils {
     public static final String CLAIMS = "claims";
 
     public static void createTopic(Properties properties) {
-
         try (AdminClient adminClient = AdminClient.create(properties)) {
-
             ListTopicsResult topics = adminClient.listTopics();
             Set<String> topicNames = topics.names().get();
-
             if (!topicNames.contains(CLAIMS)) {
                 NewTopic newTopic = new NewTopic(CLAIMS, 4, (short) 3);
                 adminClient.createTopics(Collections.singletonList(newTopic));
             }
-
         } catch (InterruptedException | ExecutionException ex) {}
-
     }
 
 }
