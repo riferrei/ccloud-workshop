@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class Claim extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 1532528906389217543L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Claim\",\"namespace\":\"io.confluent.cloud.workshop.model\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"date\",\"type\":\"long\",\"logicalType\":\"date\"},{\"name\":\"amount\",\"type\":\"double\"}]}");
+  private static final long serialVersionUID = 6107053225271715214L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Claim\",\"namespace\":\"io.confluent.cloud.workshop.model\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"date\",\"type\":\"long\",\"logicalType\":\"date\"},{\"name\":\"state\",\"type\":\"string\",\"size\":2},{\"name\":\"amount\",\"type\":\"double\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -73,6 +73,7 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
 
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public long date;
+  @Deprecated public java.lang.CharSequence state;
   @Deprecated public double amount;
 
   /**
@@ -86,11 +87,13 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
    * All-args constructor.
    * @param id The new value for id
    * @param date The new value for date
+   * @param state The new value for state
    * @param amount The new value for amount
    */
-  public Claim(java.lang.CharSequence id, java.lang.Long date, java.lang.Double amount) {
+  public Claim(java.lang.CharSequence id, java.lang.Long date, java.lang.CharSequence state, java.lang.Double amount) {
     this.id = id;
     this.date = date;
+    this.state = state;
     this.amount = amount;
   }
 
@@ -101,7 +104,8 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
     switch (field$) {
     case 0: return id;
     case 1: return date;
-    case 2: return amount;
+    case 2: return state;
+    case 3: return amount;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -112,7 +116,8 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
     switch (field$) {
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: date = (java.lang.Long)value$; break;
-    case 2: amount = (java.lang.Double)value$; break;
+    case 2: state = (java.lang.CharSequence)value$; break;
+    case 3: amount = (java.lang.Double)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -149,6 +154,23 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
    */
   public void setDate(long value) {
     this.date = value;
+  }
+
+  /**
+   * Gets the value of the 'state' field.
+   * @return The value of the 'state' field.
+   */
+  public java.lang.CharSequence getState() {
+    return state;
+  }
+
+
+  /**
+   * Sets the value of the 'state' field.
+   * @param value the value to set.
+   */
+  public void setState(java.lang.CharSequence value) {
+    this.state = value;
   }
 
   /**
@@ -210,6 +232,7 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
 
     private java.lang.CharSequence id;
     private long date;
+    private java.lang.CharSequence state;
     private double amount;
 
     /** Creates a new Builder */
@@ -231,9 +254,13 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
         this.date = data().deepCopy(fields()[1].schema(), other.date);
         fieldSetFlags()[1] = other.fieldSetFlags()[1];
       }
-      if (isValidValue(fields()[2], other.amount)) {
-        this.amount = data().deepCopy(fields()[2].schema(), other.amount);
+      if (isValidValue(fields()[2], other.state)) {
+        this.state = data().deepCopy(fields()[2].schema(), other.state);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
+      }
+      if (isValidValue(fields()[3], other.amount)) {
+        this.amount = data().deepCopy(fields()[3].schema(), other.amount);
+        fieldSetFlags()[3] = other.fieldSetFlags()[3];
       }
     }
 
@@ -251,9 +278,13 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
         this.date = data().deepCopy(fields()[1].schema(), other.date);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.amount)) {
-        this.amount = data().deepCopy(fields()[2].schema(), other.amount);
+      if (isValidValue(fields()[2], other.state)) {
+        this.state = data().deepCopy(fields()[2].schema(), other.state);
         fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.amount)) {
+        this.amount = data().deepCopy(fields()[3].schema(), other.amount);
+        fieldSetFlags()[3] = true;
       }
     }
 
@@ -337,6 +368,46 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
     }
 
     /**
+      * Gets the value of the 'state' field.
+      * @return The value.
+      */
+    public java.lang.CharSequence getState() {
+      return state;
+    }
+
+
+    /**
+      * Sets the value of the 'state' field.
+      * @param value The value of 'state'.
+      * @return This builder.
+      */
+    public io.confluent.cloud.workshop.model.Claim.Builder setState(java.lang.CharSequence value) {
+      validate(fields()[2], value);
+      this.state = value;
+      fieldSetFlags()[2] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'state' field has been set.
+      * @return True if the 'state' field has been set, false otherwise.
+      */
+    public boolean hasState() {
+      return fieldSetFlags()[2];
+    }
+
+
+    /**
+      * Clears the value of the 'state' field.
+      * @return This builder.
+      */
+    public io.confluent.cloud.workshop.model.Claim.Builder clearState() {
+      state = null;
+      fieldSetFlags()[2] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'amount' field.
       * @return The value.
       */
@@ -351,9 +422,9 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
       * @return This builder.
       */
     public io.confluent.cloud.workshop.model.Claim.Builder setAmount(double value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.amount = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this;
     }
 
@@ -362,7 +433,7 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
       * @return True if the 'amount' field has been set, false otherwise.
       */
     public boolean hasAmount() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
 
 
@@ -371,7 +442,7 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
       * @return This builder.
       */
     public io.confluent.cloud.workshop.model.Claim.Builder clearAmount() {
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -382,7 +453,8 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
         Claim record = new Claim();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.date = fieldSetFlags()[1] ? this.date : (java.lang.Long) defaultValue(fields()[1]);
-        record.amount = fieldSetFlags()[2] ? this.amount : (java.lang.Double) defaultValue(fields()[2]);
+        record.state = fieldSetFlags()[2] ? this.state : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.amount = fieldSetFlags()[3] ? this.amount : (java.lang.Double) defaultValue(fields()[3]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -419,6 +491,8 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
 
     out.writeLong(this.date);
 
+    out.writeString(this.state);
+
     out.writeDouble(this.amount);
 
   }
@@ -432,10 +506,12 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
 
       this.date = in.readLong();
 
+      this.state = in.readString(this.state instanceof Utf8 ? (Utf8)this.state : null);
+
       this.amount = in.readDouble();
 
     } else {
-      for (int i = 0; i < 3; i++) {
+      for (int i = 0; i < 4; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
           this.id = in.readString(this.id instanceof Utf8 ? (Utf8)this.id : null);
@@ -446,6 +522,10 @@ public class Claim extends org.apache.avro.specific.SpecificRecordBase implement
           break;
 
         case 2:
+          this.state = in.readString(this.state instanceof Utf8 ? (Utf8)this.state : null);
+          break;
+
+        case 3:
           this.amount = in.readDouble();
           break;
 

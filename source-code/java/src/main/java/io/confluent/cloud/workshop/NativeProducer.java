@@ -51,10 +51,16 @@ public class NativeProducer {
     Claim claim = new Claim();
     claim.setId(generatedKey);
     claim.setDate(new Date().getTime());
+    claim.setState(STATES[random.nextInt(STATES.length-1)]);
     claim.setAmount(Double.valueOf(random.nextInt(1000)));
     return claim;
   }
 
+  private static final String[] STATES = {
+    "MA", "OR", "CA", "NC", "FL", "TN", "OH",
+    "CO", "GA", "IL", "KS", "MD", "MO", "NJ",
+    "NY", "SC", "WA", "VA", "CT", "AL", "AZ"
+  };
   private static final Random random = new Random();
   private static KafkaProducer<String, Claim> producer;
 

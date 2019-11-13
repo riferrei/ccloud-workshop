@@ -145,27 +145,26 @@ In this exercise, you will clone this repository to use the source-code written 
 - **Step 13**: Click on the file *ccloud.properties* to open in the editor.
 - **Step 14**: Remove all the content that the file *ccloud.properties* might have.
 - **Step 15**: Press 'Ctrl + V' to paste the properties that you copied on step 10.
-- **Step 16**: Comment out the line 15 (the one that says 'key.serializer=') by inserting a '#' in the beginning.
-- **Step 17**: Save the changes made in the file *ccloud.properies*.
-- **Step 18**: Right click the option *ccloud-workshop* under the Maven projects view and select 'clean'.
-  ![Continue](images/exer03/step18.png)
-- **Step 19**: Right click the option *ccloud-workshop* under the Maven projects view and select 'package'.
-- **Step 20**: Within the ccloud-workshop project, expand the folder *source-code*.
-- **Step 21**: Within the *source-code* folder, expand: java/src/main/java/io/confluent/cloud/workshop.
-- **Step 22**: Click on the file *NativeProducer.java* to open in the editor.
-- **Step 23**: Scrow down the source-code until you find the main method.
-- **Step 24**: Click on the option *Run* to execute this Java class.
+- **Step 16**: Save the changes made in the file *ccloud.properies*.
+- **Step 17**: Right click the option *ccloud-workshop* under the Maven projects view and select 'clean'.
+  ![Continue](images/exer03/step17.png)
+- **Step 18**: Right click the option *ccloud-workshop* under the Maven projects view and select 'package'.
+- **Step 19**: Within the ccloud-workshop project, expand the folder *source-code*.
+- **Step 20**: Within the *source-code* folder, expand: java/src/main/java/io/confluent/cloud/workshop.
+- **Step 21**: Click on the file *NativeProducer.java* to open in the editor.
+- **Step 22**: Scrow down the source-code until you find the main method.
+- **Step 23**: Click on the option *Run* to execute this Java class.
   ![Continue](images/exer03/step24.png)
-- **Step 25**: In should see under the terminal, the output of the Java class saying that claims are being created.
+- **Step 24**: In should see under the terminal, the output of the Java class saying that claims are being created.
   ![Continue](images/exer03/step25.png)
-- **Step 26**: If you inspect the topics on the cluster, you should see a new topic called 'claims' and some messages being written on it.
+- **Step 25**: If you inspect the topics on the cluster, you should see a new topic called 'claims' and some messages being written on it.
   ![Continue](images/exer03/step26.png)
-- **Step 27**: Within the *source-code* folder, expand: java/src/main/java/io/confluent/cloud/workshop.
-- **Step 28**: Click on the file *NativeConsumer.java* to open in the editor.
-- **Step 29**: Scrow down the source-code until you find the main method.
-- **Step 30**: Click on the option *Run* to execute this Java class.
+- **Step 26**: Within the *source-code* folder, expand: java/src/main/java/io/confluent/cloud/workshop.
+- **Step 27**: Click on the file *NativeConsumer.java* to open in the editor.
+- **Step 28**: Scrow down the source-code until you find the main method.
+- **Step 29**: Click on the option *Run* to execute this Java class.
   ![Continue](images/exer03/step30.png)
-- **Step 31**: In should see under the terminal, the output of the Java class saying that claims are being consumed.
+- **Step 30**: In should see under the terminal, the output of the Java class saying that claims are being consumed.
   ![Continue](images/exer03/step31.png)
 
 By completing this exercise, you should have:

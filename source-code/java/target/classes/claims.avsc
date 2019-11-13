@@ -4,6 +4,7 @@
  "fields": [
      {"name": "id", "type": "string"},
      {"name": "date", "type": "long", "logicalType" : "date"},
+     {"name": "state", "type": "string", "size": 2},
      {"name": "amount", "type": "double"}
  ]
 }

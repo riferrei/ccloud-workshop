@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SpringConsumer",
+            "request": "launch",
+            "mainClass": "io.confluent.cloud.workshop.SpringConsumer",
+            "projectName": "ccloud-workshop"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - NativeConsumer",
             "request": "launch",
             "mainClass": "io.confluent.cloud.workshop.NativeConsumer",
