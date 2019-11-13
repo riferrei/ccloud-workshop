@@ -233,6 +233,46 @@ By completing this exercise, you should have:
 - One new topic named "CLAIMS_PER_STATE".
 - Some records stored in this topic.
 
+## Exercise 05: Sending the Claims to a Bucket in AWS S3
+
+In this exercise, you will configure a managed connector that will read all the generated claims and send them out to a AWS S3 bucket. A managed connector is essentially a combination of a Kafka Connect cluster with a connector deployed on it. But Confluent Cloud made really easy for developers to use connectors by following the same serverless principles that we applied for clusters. The estimated time to complete this exercise is of **30 minutes**.
+
+- **Step 01**: Log in into [Confluent Cloud](https://confluent.cloud/login) using your credentials.
+  ![Log In](images/exer01/step01.png)
+- **Step 02**: Select the environment "confluent-workshop" to access the environment.
+- **Step 03**: Click in the cluster "confluent-workshop" to access the cluster.
+  ![Continue](images/exer02/step03.png)
+- **Step 04**: Click on the tab *Cluster Settings* and create a new API Key. Take a note of the API Key and Secret.
+- **Step 05**: Click on the tab *Connectors* to access the connector management.
+  ![Continue](images/exer05/step04.png)
+- **Step 06**: Click in the *Add Connector* button to configure a new connector.
+- **Step 07**: Click in the *Connect* button under the *Amazon S3 Sink* connector.
+- **Step 08**: In the field *Connector Name* type "MY_STREAM".
+- **Step 09**: In the field *Kafka API Key* enter the API Key that you copied on step 04.
+- **Step 10**: In the field *Kafka API Secret* enter the API Secret that you copied on step 04.
+- **Step 11**: In the field *Topic Names* type "<YOUR_NAME>_STREAM" replacing of course the variable <YOUR_NAME>.
+  * This should match with the value you set on step 15 during the exercise 04.
+  ![Continue](images/exer05/step11.png)
+- **Step 12**: Click in the *Continue* button to proceed with the configuration.
+- **Step 13**: In the field *Amazon Key ID* enter with the key that your instructor will provide.
+- **Step 14**: In the field *Amazon Secret Access Key* enter with the secret that your instructor will provide.
+- **Step 15**: In the field *Bucket Name* type "ccloud-workshop".
+- **Step 16**: In the field *Message Format* select "JSON".
+- **Step 17**: In the field *Time Interval* select "HOURLY".
+- **Step 18**: In the field *Flush Size* type "1000".
+- **Step 19**: In the field *Tasks* type "1".
+  ![Continue](images/exer05/step19.png)
+- **Step 20**: Click in the *Continue* button to proceed with the configuration.
+- **Step 21**: Click in the *Launch* button to launch the new managed connector.
+- **Step 22**: You should see the following screen after launching the connector.
+  ![Continue](images/exer05/step22.png)
+  * It might take a several minutes until the status change from *Provisioning* to *Running*.
+
+By completing this exercise, you should have:
+
+- A managed connector up-and-running.
+- Claims being sent to the AWS S3 bucket.
+
 ## License
 
 [Apache 2.0 License](./LICENSE).
