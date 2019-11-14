@@ -192,6 +192,7 @@ In this exercise, you are going to build an event streaming pipeline that will t
   * <CLUSTER_API_SECRET>
   * <SCHEMA_REGISTRY_URL>
   * <SR_API_KEY>:<SR_API_SECRET>
+  ![Continue](images/exer04/step07.png)
 - **Step 08**: Save the changes made in the file *ksql-server.properies*.
 - **Step 09**: Open a new terminal, and navigate to the folder that contains the file *ksql-server.properties*.
 - **Step 10**: Run your own KSQL Server by typing:
@@ -216,10 +217,10 @@ In this exercise, you are going to build an event streaming pipeline that will t
   ```
 - **Step 20**: To make sure everything is correct, type:
   ```bash
-  SELECT * FROM CLAIMS_PER_STATE;
+  SELECT STATE, TOTAL FROM CLAIMS_PER_STATE;
   ```
 - **Step 21**: You should see an output like the one below:
-  ![Continue](images/exer04/step18.png)
+  ![Continue](images/exer04/step21.png)
 - **Step 22**: Press 'Ctrl + C' to stop the query execution.
 
 By completing this exercise, you should have:
@@ -244,7 +245,7 @@ In this exercise, you will configure a managed connector that will read all the 
   ![Continue](images/exer02/step03.png)
 - **Step 04**: Click on the tab *Cluster Settings* and create a new API Key. Take a note of the API Key and Secret.
 - **Step 05**: Click on the tab *Connectors* to access the connector management.
-  ![Continue](images/exer05/step04.png)
+  ![Continue](images/exer05/step05.png)
 - **Step 06**: Click in the *Add Connector* button to configure a new connector.
 - **Step 07**: Click in the *Connect* button under the *Amazon S3 Sink* connector.
 - **Step 08**: In the field *Connector Name* type "MY_STREAM".
