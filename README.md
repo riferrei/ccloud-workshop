@@ -5,7 +5,7 @@ This workshop has been created to get developers up-to-speed in how to implement
 
 - Active account in Confluent Cloud.
 - Software VirtualBox installed: https://www.virtualbox.org/wiki/Downloads
-- VM containing the environment. Click [here](https://riferrei-sharing.s3-accelerate.amazonaws.com/confluent-workshop.zip) to download the latest version of the VM.
+- VM containing the environment. Click [here](https://riferrei-sharing.s3-accelerate.amazonaws.com/ccloud-workshop.zip) to download the latest version of the VM.
 - Access to the internet (Download, Read)
 - Access to endpoints over the port 9092
 
@@ -20,10 +20,10 @@ In this exercise, you will be setting up a new environment in Confluent Cloud, w
 - **Step 01**: Log in into [Confluent Cloud](https://confluent.cloud/login) using your credentials.
   ![Log In](images/exer01/step01.png)
 - **Step 02**: Click on the *Add Environment* button to create a new environment.
-- **Step 03**: Enter with a name for the environment. Type "confluent-workshop" and the click in the *Create* button.
+- **Step 03**: Enter with a name for the environment. Type "ccloud-workshop" and the click in the *Create* button.
   ![Naming](images/exer01/step03.png)
 - **Step 04**: Click in the *Create Cluster* button to create a new cluster.
-- **Step 05**: In the field *Cluster Name* type "confluent-workshop".
+- **Step 05**: In the field *Cluster Name* type "ccloud-workshop".
 - **Step 06**: In the field *Provider* select "Amazon Web Services".
 - **Step 07**: In the field *Region* select "us-east-1".
 - **Step 08**: In the field *Availability* select "Single Zone".
@@ -40,8 +40,8 @@ In this exercise, you will be setting up a new environment in Confluent Cloud, w
 
 By completing this exercise, you should have:
 
-- One environment named "confluent-workshop".
-- One cluster named "confluent-workshop".
+- One environment named "ccloud-workshop".
+- One cluster named "ccloud-workshop".
 - Schema Registry enabled for the environment.
 
 ## Exercise 02: Creating a Topic and Writing Data on It
@@ -50,8 +50,8 @@ In this exercise, you will create a topic in the cluster and use the Confluent C
 
 - **Step 01**: Log in into [Confluent Cloud](https://confluent.cloud/login) using your credentials.
   ![Log In](images/exer01/step01.png)
-- **Step 02**: Select the environment "confluent-workshop" to access the environment.
-- **Step 03**: Click in the cluster "confluent-workshop" to access the cluster.
+- **Step 02**: Select the environment "ccloud-workshop" to access the environment.
+- **Step 03**: Click in the cluster "ccloud-workshop" to access the cluster.
   ![Continue](images/exer02/step03.png)
 - **Step 04**: Click on the tab *Topics* to access the topic management.
   ![Continue](images/exer02/step04.png)
@@ -70,7 +70,7 @@ In this exercise, you will create a topic in the cluster and use the Confluent C
   ```bash
   ccloud environment list
   ```
-- **Step 12**: Select the ID of the environment "confluent-workshop".
+- **Step 12**: Select the ID of the environment "ccloud-workshop".
 - **Step 13**: Make sure the environment is selected by typing:
   ```bash
   ccloud environment use <ID_SELECTED_ON_STEP_12>
@@ -79,7 +79,7 @@ In this exercise, you will create a topic in the cluster and use the Confluent C
   ```bash
   ccloud kafka cluster list
   ```
-- **Step 15**: Select the ID of the cluster "confluent-workshop".
+- **Step 15**: Select the ID of the cluster "ccloud-workshop".
 - **Step 16**: Make sure the cluster is selected by typing:
   ```bash
   ccloud kafka cluster use <ID_SELECTED_ON_STEP_15>
@@ -125,12 +125,12 @@ By completing this exercise, you should have:
 
 ## Exercise 03: Producing and Consuming Claims using Java
 
-In this exercise, you will clone this repository to use the source-code written in Java to interact with your cluster. The code contains examples of native Java applications that relies on Kafka's client API to produce and consume records. The records created in this exercise will be used later on the workshop. The estimated time to complete this exercise is of **45 minutes**.
+In this exercise, you will use the source-code from this repository to interact with the cluster running on Confluent Cloud. The code contains examples of Java applications that relies on Kafka's client API to produce and consume records. The records created in this exercise will be used later on the workshop. The estimated time to complete this exercise is of **45 minutes**.
 
 - **Step 01**: Log in into [Confluent Cloud](https://confluent.cloud/login) using your credentials.
   ![Log In](images/exer01/step01.png)
-- **Step 02**: Select the environment "confluent-workshop" to access the environment.
-- **Step 03**: Click in the cluster "confluent-workshop" to access the cluster.
+- **Step 02**: Select the environment "ccloud-workshop" to access the environment.
+- **Step 03**: Click in the cluster "ccloud-workshop" to access the cluster.
   ![Continue](images/exer02/step03.png)
 - **Step 04**: Click on the tab *CLI and Client Configuration* to access the client management.
 - **Step 05**: Click on the tab *Java Client* to access the Java client management.
@@ -239,8 +239,8 @@ In this exercise, you will configure a managed connector that will read all the 
 
 - **Step 01**: Log in into [Confluent Cloud](https://confluent.cloud/login) using your credentials.
   ![Log In](images/exer01/step01.png)
-- **Step 02**: Select the environment "confluent-workshop" to access the environment.
-- **Step 03**: Click in the cluster "confluent-workshop" to access the cluster.
+- **Step 02**: Select the environment "ccloud-workshop" to access the environment.
+- **Step 03**: Click in the cluster "ccloud-workshop" to access the cluster.
   ![Continue](images/exer02/step03.png)
 - **Step 04**: Click on the tab *Cluster Settings* and create a new API Key. Take a note of the API Key and Secret.
 - **Step 05**: Click on the tab *Connectors* to access the connector management.
