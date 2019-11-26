@@ -222,7 +222,7 @@ In this exercise, you are going to build an event streaming pipeline that will t
   * Please leave this KSQL Server running until the end of the workshop.
 - **Step 13**: Within the *source-code* folder, expand: ksql.
 - **Step 14**: Click on the file *pipeline.sql* to open in the editor.
-- **Step 15**: Replace the variable <YOUR_NAME> with your name.
+- **Step 15**: Replace the variable <YOUR_NAME> with your name written in uppercase.
 - **Step 16**: Save the changes made in the file *pipeline.sql*.
 - **Step 17**: Open a new terminal, and navigate to the folder that contains the file *pipeline.sql*.
 - **Step 18**: Start a new client session with the KSQL Server by typing:
