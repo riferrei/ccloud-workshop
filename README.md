@@ -3,21 +3,39 @@ This workshop has been created to get developers up-to-speed in how to implement
 
 ## Requirements
 
+- Access to this github repository https://github.com/riferrei/ccloud-workshop
 - Active account in Confluent Cloud.
-- Software VirtualBox installed: https://www.virtualbox.org/wiki/Downloads
-- VM containing the environment. Click [here](https://riferrei-sharing.s3-accelerate.amazonaws.com/ccloud-workshop.zip) to download the latest version of the VM.
+- Active account and access to Confluent Content Raven https://cloud.contentraven.com/confluent/login
 - Access to the internet (Download, Read)
-- Access to endpoints over the port 9092
 
 ## Overview
 
 In this workshop we are going to create an end-to-end application that processes claim data. It will be shown different methods of how to handle that data, including the Confluent Cloud CLI, native producers and consumers written in Java, as well as an KSQL pipeline that will transform and aggregate the data. It will be also shown how to handle data using the Avro format, where it is going to be possible to leverage the native features in Confluent Cloud for schema enforcement. Finally, we will export the processed data to a bucket in AWS S3 -- by using a managed connector available in Confluent Cloud.
 
+## Exercise 00: Accessing Virtual Environment 
+The Confluent Content Ravethat will be used for the workshop exercises
+
+- **Step 01**: Log in into [Confluent Content Raven](https://cloud.contentraven.com/confluent/login) using your credentials.
+  ![Log In](images/exer00/step01.png)
+- **Step 02**: Click on the icon under *Learning Paths* to access content.
+  ![Naming](images/exer00/step02.png)
+- **Step 03**: Click on the icon under *Labs* to access virtual environment.
+  ![Naming](images/exer00/step03.png)
+- **Step 04**: Click on the *Launch Lab* button to launch virtual environment.
+  ![Naming](images/exer00/step04.png)
+- **Step 05**: Click on the *Start* button to start virtual machine.
+  ![Naming](images/exer00/step05.png)
+- **Step 06**: Click on the *Yes* button to acknowledge start of virtual machine (leaving the checkbox unhecked).
+  ![Naming](images/exer00/step06.png)
+- **Step 07**: Wait for machine to boot.
+- **Step 08**: Click on *training* button to login, using training as password.
+
+  
 ## Exercise 01: Setting Up the Environment and Creating a Cluster
 
 In this exercise, you will be setting up a new environment in Confluent Cloud, where you will create a new cluster and also set up a managed Schema Registry for it. This environment will be used throughout the entire workshop. The estimated time to complete this exercise is of **15 minutes**.
 
-- **Step 01**: Log in into [Confluent Cloud](https://confluent.cloud/login) using your credentials.
+- **Step 01**: From virtual environment, launch Chrome and Log in into [Confluent Cloud](https://confluent.cloud/login) using your Confluent Cloud credentials that were provided to you.
   ![Log In](images/exer01/step01.png)
 - **Step 02**: Click on the *Add Environment* button to create a new environment.
 - **Step 03**: Enter with a name for the environment. Type "ccloud-workshop" and the click in the *Create* button.
